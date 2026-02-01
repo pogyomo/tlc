@@ -53,7 +53,7 @@ impl<'src> Parser<'src> {
         let mut lhs = self.bool_and()?;
         while let Some(op) = self.consume_with(|token| {
             let kind = match token.kind {
-                TokenKind::AndAnd => InfixOpKind::And,
+                TokenKind::AndAnd => InfixOpKind::BoolAnd,
                 _ => return None,
             };
             Some(InfixOp {
@@ -78,7 +78,7 @@ impl<'src> Parser<'src> {
         let mut lhs = self.bit_or()?;
         while let Some(op) = self.consume_with(|token| {
             let kind = match token.kind {
-                TokenKind::VertVert => InfixOpKind::Or,
+                TokenKind::VertVert => InfixOpKind::BoolOr,
                 _ => return None,
             };
             Some(InfixOp {

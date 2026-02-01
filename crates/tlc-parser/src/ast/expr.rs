@@ -129,9 +129,9 @@ pub enum InfixOpKind {
     /// `>>`
     RShift,
     /// `&&`
-    And,
+    BoolAnd,
     /// `||`
-    Or,
+    BoolOr,
     /// `<`
     Lt,
     /// `<=`
